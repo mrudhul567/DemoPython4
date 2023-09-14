@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>apply FORM</title>
+</head>
+<body style="background-color:yellow;" >
+<h1 style="text-align:center;">APPLICATION FORM</h1>
+<form method="post" style="text-align:center;">
+     {% csrf_token %}
+     <input type="text" name="name" placeholder="Enter Your Name"><br>
+     <br>
+     <label>Date of birth:</label><br>
+     <br>
+     <input type="date" name="dob" placeholder="Date Of Birth"><br>
+     <br>
+       <input type="number" name="age" placeholder="Age"><br>
+     <br>
+
+     <label>Gender</label><br>
+     <br>
+     <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <label class="form-check-label" for="flexRadioDefault1">
+    Male
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+  <label class="form-check-label" for="flexRadioDefault2">
+    Female
+  </label>
+</div>
+     <br>
+
+     <input type="text" name="phone" placeholder="Phone Number"><br>
+     <br>
+     <input type="email" name="email" placeholder="Email Id"><br>
+     <br>
+     <input type="text" name="address" placeholder="Address"><br>
+     <br>
+
+
+
+
+     <p>Departments</p>
+     <div class="col-xs-6">
+  <select class="form-control" name="select1" id="select1">
+     <option value="0">-Select Department-</option>
+     <option value="1">Languages</option>
+     <option value="2">Sciences</option>
+     <option value="3">Social Sciences</option>
+     <option value="4">Professional courses</option>
+     <option value="5"> Physical Education </option><br>
+     <br>
+  </select>
+     </div>
+
+     <p>Courses</p>
+  <div class="col-xs-6">
+  <select class="form-control" name="select1" id="select2">
+     <option value="0">-Select Course-</option>
+     <option value="1">English</option>
+     <option value="1">Malayalam</option>
+     <option value="1">Hindi</option>
+     <option value="2">Physics</option>
+     <option value="2">Chemistry</option>
+     <option value="2">Mathematics</option>
+     <option value="2">Zoology </option>
+     <option value="2">Botany</option>
+     <option value="2">Computer Science</option>
+     <option value="3">History</option>
+     <option value="3">Economics</option>
+     <option value="4">MCA</option>
+     <option value="4">MBA</option>
+     <option value="5">Sports Management</option>
+
+    <br>
+</select>
+  </div>
+
+         <p>Purpose</p>
+<select>
+     <option value="">---select---</option>
+     <option value="enquiry"> Enquiry </option>
+     <option value="place order"> Place Order </option>
+    <option value="return"> Return </option>
+
+
+</select><br>
+     <br>
+     <div>Materials Provided </div><br>
+     <input type="checkbox" name="correct">Notebooks
+     <input type="checkbox" name="correct">Pens
+     <input type="checkbox" name="correct">Exam Papers<br>
+     <br>
+     <br>
+
+     <button onclick="myFunction()">Submit</button>
+      <button onclick="">Logout</button><br> <br>
+<button class="btn btn-success"><a href="/">BACK TO HOME</a></button>
+<script>
+function myFunction() {
+  alert("Order Received");
+}
+
+</script>
+
+
+</form>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script>
+ //Reference: https://jsfiddle.net/fwv18zo1/
+var $select1 = $( '#select1' ),
+		$select2 = $( '#select2' ),
+    $options = $select2.find( 'option' );
+
+$select1.on( 'change', function() {
+	$select2.html( $options.filter( '[value="' + this.value + '"]' ) );
+} ).trigger( 'change' );
+</script>
+</body>
+</html>
